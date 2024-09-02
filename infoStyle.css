@@ -1,0 +1,17 @@
+.infoPanels {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: center;
+    gap: 35px;
+    margin-bottom: 8%;
+    height: 100vh;
+}
+
+.panelsApperence {
+    width: 350px;
+    height: 242px;
+}
+
+.panelsApperence img {
+    width: 100%;
+}

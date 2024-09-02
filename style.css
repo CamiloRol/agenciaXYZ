@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+html {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+#optionsSpace {
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+    justify-items: center;
+}
+
+.gapito {
+    width: 100%;
+    height: 80px;
+    background-color: gray;
+}
+
+#destinationsSpace {
+    margin-top: 25px;
+    display: flex;
+    justify-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#destinationsSpace img{
+    width: 70%;
+    border-radius: 15%;
+    margin-left: 15px;
+
+}
+
+.radio {
+    display: none;
+}
+
+.radio:checked + label {
+    border: 0.5px solid gray;
+}
+
+.btn {
+    margin: 25px auto;
+    width: 120px;
+    height: 45px;
+}
+
+#formSpace {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clientForm, input{
+    display: block;
+}
+
+.quote {
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    height: 600px;
+}
+
+.quote img {
+width: 100%;
+}
+
+.whoAreWe {
+    margin-top: 2%;
+}
