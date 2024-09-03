@@ -2,6 +2,7 @@
 
 //Variables
 let travels = [];
+/* let quotesArray = []; */
 let valueKid;
 let quanAdult;
 let quanKidos;
@@ -16,6 +17,8 @@ let printQuote;
 
 let discount = 0;
 let nameCli;
+/* let listTravel;
+let nnumT; */
 //Constantes
 
 const destinationsSpace = document.getElementById("destinationsSpace")
@@ -25,6 +28,8 @@ const formSpace = document.getElementById("formSpace")
 const cotiCli = document.getElementById("cotiCli")
 const destinySelection = document.getElementById("destinySelection")
 const quoteSpace = document.getElementById("quoteSpace")
+/* const botonTravel = document.getElementById("botonTravel") */
+const restart = document.getElementById("restart")
 
 //Clase que me guarda los destinos que tiene mi agencia
 class Travel {
@@ -64,37 +69,52 @@ function pageHome(){
         inputCanon = document.getElementById('canonDelChicamocha')
         inputLlanos = document.getElementById('llanosOrientales')
     })
-
     botonOptions.addEventListener('click', optionsSelection)
-    cotiCli.addEventListener('click', cotizar)
+    cotiCli.addEventListener('click', quotes)
+    /* botonTravel.addEventListener('click',recolectionProc) */
+    restart.addEventListener('click',recargar)
     formSpace.style.display = "none"
+    restart.style.display = "none"
 }
 
 function optionsSelection() {
     optionsSpace.style.display = "none"
     formSpace.style.display = "flex"
     if (inputGuajira.checked) {
-        destinySelection.innerHTML = inputGuajira.id
+        destinySelection.innerHTML = guajira.name
         clientSelec = inputGuajira.id
     }else if(inputCanon.checked) {
-        destinySelection.innerHTML = inputCanon.id
+        destinySelection.innerHTML = canonDelChicamocha.name
         clientSelec = inputCanon.id
     }else if(inputLlanos.checked) {
-        destinySelection.innerHTML = inputLlanos.id
+        destinySelection.innerHTML = llanosOrientales.name
         clientSelec = inputLlanos.id
     }else {
         alert('No has seleccionado un mon')
-        recargar()
     }
 }
 
-function cotizar() {
+/* function recolectionProc() {
+    listTravel = document.getElementById("listTravel");
+    nnumT = listTravel.value
+    let i = 0
+    do {
+        pageHome()
+        optionsSelection()
+        quotes()
+        i++
+    } while (i != nnumT);
+   console.log(nnumT)
+} */
+
+function quotes() {
     subTotalProc()
     discountProc()
 
     total = subTotal - discount
     formSpace.style.display = "none"
     printQuotes()
+    restart.style.display = "block"
 }
 
 function printQuotes() {
@@ -113,8 +133,8 @@ Subtotal: $ ${subTotal}
 Vlr descuento: $ ${discount}
 Neto a pagar: $ ${total}
             </pre></div>`
-
-        quoteSpace.innerHTML = printQuote 
+        
+        quoteSpace.innerHTML = printQuote
     }else if (clientSelec == "canonDelChicamocha") {
         printQuote = `<div class="quote"><img src=${canonDelChicamocha.photo} alt=${canonDelChicamocha.photo}>
         <pre>
@@ -130,7 +150,7 @@ Vlr descuento: $ ${discount}
 Neto a pagar: $ ${total}
             </pre></div>`
 
-        quoteSpace.innerHTML = printQuote 
+        quoteSpace.innerHTML = printQuote
     }else if (clientSelec == "llanosOrientales") {
         printQuote = `<div class="quote"><img src=${llanosOrientales.photo} alt=${llanosOrientales.photo}>
         <pre>
@@ -146,10 +166,10 @@ Vlr descuento: $ ${discount}
 Neto a pagar: $ ${total}
             </pre></div>`
 
-        quoteSpace.innerHTML = printQuote 
+        quoteSpace.innerHTML = printQuote
     }
 }
-
+    
 function subTotalProc() {
     quanAdult = document.getElementById("numAdul").value
     quanKidos = document.getElementById("numKid").value

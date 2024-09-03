@@ -62,11 +62,19 @@ html {
     display: block;
 }
 
-.quote {
+#quoteSpace {
     display: flex;
+    justify-content: center;
+
+}
+
+.quote {
     flex-direction: column;
-    width: 380px;
+    width: 400px;
     height: 600px;
+    justify-content: center;
+    background-color: lightblue;
+    border-radius: 4%;
 }
 
 .quote img {
@@ -75,4 +83,37 @@ width: 100%;
 
 .whoAreWe {
     margin-top: 2%;
+}
+
+.gapito {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gapito h2 {
+    margin-left: 8%;
+}
+
+.gapito select {
+    width: 45px;
+    height: 45px;
+    border-color: transparent;
+    background-color: rgb(195, 193, 193);
+    border-radius: 50%;
+}
+
+/* #botonTravel {
+    margin-left: 10px;
+} */
+
+#destinySelection {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+#restart{
+    width: 160px;
 }
